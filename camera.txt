@@ -1,0 +1,21 @@
+extends Camera2D
+
+const SPEED = 50.0
+
+
+func _input(event):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_WHEEL_UP and zoom.x < 3.0:
+			zoom += Vector2(0.05, 0.05)
+		if event.button_index == MOUSE_BUTTON_WHEEL_DOWN and zoom.x > 0.10:
+			zoom -= Vector2(0.05, 0.05)
+
+func _physics_process(delta: float) -> void:
+	var direction := Input.get_axis("a", "d")
+	if direction:
+		position.x += direction * SPEED
+
+	var direction2 := Input.get_axis("w", "s")
+	if direction2:
+		position.y += direction2 * SPEED
+		
