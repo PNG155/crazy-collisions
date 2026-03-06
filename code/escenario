@@ -1,5 +1,15 @@
 extends Node2D
 
+@onready var musica: AudioStreamPlayer = $musica
+
+
+func _ready() -> void:
+	musica.play()
+	musica.finished.connect(_on_musica_finished)
+
+func _on_musica_finished() -> void:
+	musica.play()
+
 @export var ball : PackedScene
 
 func _input(event):
