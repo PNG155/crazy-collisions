@@ -1,0 +1,6 @@
+extends Label
+
+func _process(delta):
+	text = "requirement: " + str(GameManager.requirement)
+	if (GameManager.colisiones_totales == GameManager.requirement):
+		GameManager.requirement += GameManager.requirement*2 
