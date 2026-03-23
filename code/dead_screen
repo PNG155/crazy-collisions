@@ -1,0 +1,10 @@
+extends Node2D
+
+@onready var musica: AudioStreamPlayer = $musica
+
+func _ready() -> void:
+	musica.play()
+	musica.finished.connect(_on_music_finnished)
+	
+func _on_music_finnished() ->void:
+	musica.play()
