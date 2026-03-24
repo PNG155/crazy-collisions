@@ -1,0 +1,20 @@
+extends Label
+
+var color_original: Color
+
+func _ready() -> void:
+	color_original = modulate
+	$Button3.button_down.connect(_on_button_button_down)
+	$Button3.mouse_entered.connect(_on_mouse_entered)
+	$Button3.mouse_exited.connect(_on_mouse_exited)
+
+func _on_button_button_down() -> void:
+	if AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master")) < 10:
+		var volumen_actual = AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master")) 
+		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), volumen_actual + 10)
+
+func _on_mouse_entered() -> void:
+	modulate = Color.BLUE
+
+func _on_mouse_exited() -> void:
+	modulate = color_original
