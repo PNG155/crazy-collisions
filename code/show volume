@@ -1,0 +1,4 @@
+extends Label
+
+func _process(delta):
+	text = "volume:" + str(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master")) + 40)
