@@ -1,5 +1,7 @@
 extends Node2D
 
+#random music:
+
 const musica_random= [
 	"res://musica retro/musica retro.mp3",
 	"res://musica retro/musica retro2.wav",
@@ -19,6 +21,7 @@ func play_random() -> void:
 	musica.play()
 
 func _ready() -> void:
+	bucle()
 	play_random()
 	musica.finished.connect(_on_music_finished)
 
@@ -28,9 +31,11 @@ func _on_music_finished() -> void:
 
 
 
+
+#actions:
+
 func _input(event):
 	if event.is_action_pressed("esc"):
-		var timer = get_node("Camera2D/CanvasLayer2/Label2/Timer")
 		var objeto = preload("res://esc.tscn").instantiate()
 		get_node("Camera2D/CanvasLayer2").add_child(objeto)
 		get_tree().paused = !get_tree().paused
@@ -39,4 +44,23 @@ func _input(event):
 			var nueva_pelota = ball.instantiate()
 			nueva_pelota.position = get_global_mouse_position()
 			add_child(nueva_pelota)
-			
+
+
+#powers amazing:
+
+@onready var screen_size = get_viewport().get_visible_rect().size
+
+func super_poder():
+	
+	var x_random = randi_range(0, int(screen_size.x))
+	var y_random = randi_range(0, int(screen_size.y))
+	
+	var mejora = preload("res://mejora.tscn").instantiate()
+	mejora.position = Vector2(x_random, y_random)
+	add_child(mejora)
+
+
+func bucle():
+	super_poder()
+	await get_tree().create_timer(10).timeout
+	bucle()
