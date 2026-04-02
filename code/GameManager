@@ -6,6 +6,6 @@ var extra_ball = 2
 var extra_time = 5
 var multi = 1	
 var legendario = 0
-var raro = 5
+var rare = 5
 var common = 95
 var maxing_supreme = 0
