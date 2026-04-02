@@ -13,6 +13,9 @@ const musica_random= [
 ]
 
 @export var ball : PackedScene
+@export var rare : PackedScene
+@export var legendary : PackedScene
+@export var maxing_supreme : PackedScene
 @onready var musica: AudioStreamPlayer = $musica
 
 func play_random() -> void:
@@ -30,6 +33,27 @@ func _on_music_finished() -> void:
 	play_random()
 
 
+#pelotas todas chulas:
+
+func maxing_supreme1():
+	var nueva_pelota = maxing_supreme.instantiate()
+	nueva_pelota.position = get_global_mouse_position()
+	add_child(nueva_pelota)
+
+func legendary1():
+	var nueva_pelota = legendary.instantiate()
+	nueva_pelota.position = get_global_mouse_position()
+	add_child(nueva_pelota)
+
+func rare1():
+	var nueva_pelota = rare.instantiate()
+	nueva_pelota.position = get_global_mouse_position()
+	add_child(nueva_pelota)
+
+func common1():
+	var nueva_pelota = ball.instantiate()
+	nueva_pelota.position = get_global_mouse_position()
+	add_child(nueva_pelota)
 
 
 #actions:
@@ -41,9 +65,16 @@ func _input(event):
 		get_tree().paused = !get_tree().paused
 		
 	if event.is_action_pressed("click"):
-			var nueva_pelota = ball.instantiate()
-			nueva_pelota.position = get_global_mouse_position()
-			add_child(nueva_pelota)
+			var luck = randf_range(1, 100)
+			
+			if luck <= GameManager.maxing_supreme:
+				maxing_supreme1()
+			elif luck <= GameManager.legendary:
+				legendary1()
+			elif luck <= GameManager.rare:
+				rare1()
+			else:
+				common1()
 
 
 #powers amazing:
@@ -61,6 +92,7 @@ func super_poder():
 
 
 func bucle():
+	await get_tree().create_timer(5).timeout
 	super_poder()
-	await get_tree().create_timer(10).timeout
+	await get_tree().create_timer(5).timeout
 	bucle()
