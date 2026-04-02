@@ -1,4 +1,7 @@
 extends Node
 
 var colisiones_totales: int = 0
-var requirement = 1
+var requirement: int = 10
+var extra_ball = 5
+var extra_time = 5
+var multi = 1	
