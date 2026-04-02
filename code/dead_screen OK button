@@ -1,0 +1,11 @@
+extends Sprite2D
+
+func _on_button_button_down() -> void:
+	await get_tree().create_timer(1).timeout
+	get_tree().change_scene_to_file("res://pantalla_de_inicio.tscn")
+	
+	GameManager.colisiones_totales = 0
+	GameManager.requirement = 10
+	GameManager.extra_ball = 5
+	GameManager.extra_time = 5
+	GameManager.multi = 1
