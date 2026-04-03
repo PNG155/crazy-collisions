@@ -92,7 +92,6 @@ func super_poder():
 
 
 func bucle():
-	await get_tree().create_timer(5).timeout
+	await get_tree().create_timer(randf_range(10,100)).timeout
 	super_poder()
-	await get_tree().create_timer(5).timeout
 	bucle()
