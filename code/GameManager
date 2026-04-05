@@ -5,7 +5,14 @@ var requirement: int = 10
 var extra_ball = 2
 var extra_time = 5
 var multi = 1	
-var legendary = 0
-var rare = 5
-var common = 95
+var balls = 1
+
+var legendary = 1
+var rare = 100
+var common = 899
 var maxing_supreme = 0
+
+var legendary_plus = 200
+var rare_plus = 2
+var common_plus = 1
+var maxing_supreme_plus = 500
