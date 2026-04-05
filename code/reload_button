@@ -1,0 +1,6 @@
+extends Label
+
+var fuck:int = GameManager.colisiones_totales/2
+
+func _ready():
+	text = "Reload: " + str(fuck) + "$"
