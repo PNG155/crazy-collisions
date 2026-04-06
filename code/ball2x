@@ -1,0 +1,7 @@
+extends Button
+
+func _on_button_down() -> void:
+	print("CLICK")
+	GameManager.colisiones_totales -= $Label.valuer
+	get_tree().change_scene_to_file("res://escenario.tscn")
+	
