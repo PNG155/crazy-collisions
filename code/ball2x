@@ -1,0 +1,7 @@
+extends Label
+
+func _ready():
+	var value: int = (GameManager.colisiones_totales * GameManager.multi) / 2.45
+	text = "all ball collisions 
+	are multiplied by
+	2   VALUE: " + str (value) + "$"
