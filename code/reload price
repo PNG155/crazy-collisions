@@ -1,0 +1,6 @@
+extends Label
+
+var fuck:int = GameManager.money /2
+
+func _ready():
+	text = "Reload: " + str(fuck) + "$"
