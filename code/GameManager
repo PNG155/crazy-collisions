@@ -4,8 +4,9 @@ var colisiones_totales: int = 0
 var requirement: int = 10
 var extra_ball = 2
 var extra_time = 5
-var multi = 1	
+var multi = 1
 var balls = 1
+var money = 0
 
 var legendary = 1
 var rare = 100
