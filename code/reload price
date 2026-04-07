@@ -1,6 +1,5 @@
 extends Label
 
-var fuck:int = GameManager.money /2
-
-func _ready():
+func _process(delta):
+	var fuck:int = GameManager.money /2
 	text = "Reload: " + str(fuck) + "$"
