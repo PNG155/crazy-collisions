@@ -1,5 +1,8 @@
 extends Label
 
-func _ready():
+func _ready() -> void:
 	GameManager.money += GameManager.colisiones_totales
+
+func _process(delta):
+
 	text = "Money: " + str(GameManager.money)
