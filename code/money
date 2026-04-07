@@ -1,0 +1,5 @@
+extends Label
+
+func _ready():
+	GameManager.money += GameManager.colisiones_totales
+	text = "Money: " + str(GameManager.money)
