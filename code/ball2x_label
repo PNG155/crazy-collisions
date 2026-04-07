@@ -1,7 +1,11 @@
 extends Label
 
+var valuer:int = 0
+
 func _ready():
-	var value: int = (GameManager.colisiones_totales * GameManager.multi) / 2.45
+	await get_tree().process_frame
+	valuer = get_parent().valuer
 	text = "all ball collisions 
 	are multiplied by
-	2   VALUE: " + str (value) + "$"
+	2. VALUE: " + str (valuer) + "$"
+	
