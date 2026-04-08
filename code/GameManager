@@ -8,12 +8,13 @@ var multi = 1
 var balls = 1
 var money = 0
 
-var legendary = 1
+var legendary = 10
 var rare = 100
-var common = 899
-var maxing_supreme = 0
+var common = 890
+var maxing_supreme = -20
+var bond = 0
 
-var legendary_plus = 200
+var legendary_plus = 50
 var rare_plus = 2
 var common_plus = 1
-var maxing_supreme_plus = 500
+var maxing_supreme_plus = 150
