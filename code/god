@@ -1,0 +1,9 @@
+extends Button
+
+func _on_mouse_entered() -> void:
+	$Sprite2D.show()
+	$Label.show()
+
+func _on_mouse_exited() -> void:
+	$Sprite2D.hide()
+	$Label.hide()
