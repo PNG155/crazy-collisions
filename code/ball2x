@@ -2,11 +2,18 @@ extends Button
 
 var valuer:int = 0
 
-func _ready():
-	valuer = int(GameManager.money / 2)
+func actualizar_precio():
+	valuer = int(GameManager.colisiones_totales * 1.40)
 	print(valuer)
 	if valuer <= 9: 
 		valuer = 10 
+	
+
+func _ready():
+	actualizar_precio()
+
+func _process(delta):
+	actualizar_precio()
 
 func _on_button_down() -> void:
 	print("CLICK")
@@ -15,18 +22,18 @@ func _on_button_down() -> void:
 		print(valuer)
 		GameManager.multi += 1
 		GameManager.money -= valuer
-		queue_free()
-		get_tree().change_scene_to_file("res://escenario.tscn")
+		get_parent().queue_free()
+		print(get_parent())
+		actualizar_precio()
 	else:
 		print ("poor")
 		print(valuer)
+		return
 		
-
 
 func _on_mouse_entered() -> void:
 	$Sprite2D2.show()
 	$Label.show()
-	
 
 
 func _on_mouse_exited() -> void:
