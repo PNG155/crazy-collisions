@@ -3,7 +3,7 @@ extends Button
 var valuer:int = 0
 
 func actualizar_precio():
-	valuer = int(GameManager.colisiones_totales * 1.40)
+	valuer = int(GameManager.colisiones_totales * 1.5)
 	print(valuer)
 	if valuer <= 9: 
 		valuer = 10 
