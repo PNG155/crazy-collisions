@@ -14,10 +14,10 @@ func bloquear_compra():
 	await get_tree().create_timer(2.5).timeout
 	podes_comprar = true
 
-var legendary = -10
+var legendary = -1
 var rare = 10
 var common = 90
-var maxing_supreme = -20
+var maxing_supreme = -10
 var bond = 0
 
 var legendary_plus = 50
