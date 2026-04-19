@@ -11,7 +11,7 @@ var run = 1
 var podes_comprar
 func bloquear_compra():
 	podes_comprar = false
-	await get_tree().create_timer(111).timeout
+	await get_tree().create_timer(2.5).timeout
 	podes_comprar = true
 
 var legendary = -10
