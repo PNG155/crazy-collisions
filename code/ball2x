@@ -22,8 +22,8 @@ func actualizar_precio():
 
 
 func _ready():
-	random = randf_range(0.85, 1.15)
 	actualizar_precio()
+	GameManager.bloquear_compra()
 
 
 func _on_mouse_entered() -> void:
