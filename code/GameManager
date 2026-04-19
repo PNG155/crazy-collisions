@@ -6,7 +6,8 @@ var extra_ball = 2
 var extra_time = 5
 var multi = 1
 var balls = 1
-var money = 0
+var money:int = 0
+var run = 1
 
 var legendary = 10
 var rare = 100
