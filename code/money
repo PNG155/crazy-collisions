@@ -1,7 +1,7 @@
 extends Label
 
 func _ready() -> void:
-	GameManager.money += GameManager.colisiones_totales
+	GameManager.money +=  log(GameManager.colisiones_totales + 1 ) * 50
 
 func _process(delta):
 
