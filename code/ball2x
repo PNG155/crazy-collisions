@@ -6,15 +6,15 @@ var precio_base = 0
 
 func actualizar_precio():
 	if GameManager.run < 3:
-		precio_base = 25
+		precio_base = 40
 	elif GameManager.run < 6:
-		precio_base = 50
-	elif GameManager.run <13:
-		precio_base = 100
-	else:
+		precio_base = 80
+	elif GameManager.run < 13:
 		precio_base = 200
+	else:
+		precio_base = 300
 	
-	precio_final = precio_base * randf_range(0.5 , 3) 
+	precio_final = precio_base * randf_range(0.7, 3)
 	
 	print(precio_final)
 	if precio_final < 10: 
@@ -42,7 +42,7 @@ func _on_button_down() -> void:
 		print("buy it")
 		print(precio_final)
 		
-		GameManager.bond += 1
+		GameManager.multi += 1
 		GameManager.money -= precio_final
 		GameManager.podes_comprar = false
 		
@@ -52,3 +52,4 @@ func _on_button_down() -> void:
 		print("poor")
 		print(precio_final)
 		return
+
