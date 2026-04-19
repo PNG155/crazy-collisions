@@ -1,33 +1,32 @@
 extends Button
 
-var valuer:int = 0
-
+var precio_final:int = 0
+var random = 0
+var precio_base = 0
 func actualizar_precio():
-	valuer = int(GameManager.colisiones_totales * 1.4)
-	print(valuer)
-	if valuer <= 9: 
-		valuer = 10 
+	precio_base = 15 + GameManager.run * 15
+	precio_final = precio_base * randf_range(0.9, 1.1)
+	print(precio_final)
+	if precio_final < 10: 
+		precio_final = 10 
 	
 
 func _ready():
-	actualizar_precio()
-
-func _process(delta):
+	random = randf_range(0.85, 1.15)
 	actualizar_precio()
 
 func _on_button_down() -> void:
 	print("CLICK")
-	if GameManager.money >= valuer:
+	if GameManager.money >= precio_final:
 		print ("buy it")
-		print(valuer)
+		print(precio_final)
 		GameManager.multi += 1
-		GameManager.money -= valuer
+		GameManager.money -= precio_final
 		get_parent().queue_free()
 		print(get_parent())
-		actualizar_precio()
 	else:
 		print ("poor")
-		print(valuer)
+		print(precio_final)
 		return
 		
 
@@ -39,3 +38,4 @@ func _on_mouse_entered() -> void:
 func _on_mouse_exited() -> void:
 	$Sprite2D2.hide()
 	$Label.hide()
+
