@@ -14,7 +14,7 @@ func actualizar_precio():
 	else:
 		precio_base = 200
 	
-	precio_final = precio_base * randf_range(1, 2) 
+	precio_final = precio_base * randf_range(0.5 , 3) 
 	
 	print(precio_final)
 	if precio_final < 10: 
