@@ -65,7 +65,8 @@ func _input(event):
 		get_tree().paused = !get_tree().paused
 		
 	if event.is_action_pressed("click"):
-			var luck = randf_range(1, 100)
+		for i in range(GameManager.balls):
+			var luck = randf_range(1, 100) - GameManager.bond
 			
 			if luck <= GameManager.maxing_supreme:
 				maxing_supreme1()
@@ -83,8 +84,8 @@ func _input(event):
 
 func super_poder():
 	
-	var x_random = randi_range(0, int(screen_size.x))
-	var y_random = randi_range(0, int(screen_size.y))
+	var x_random = randi_range(-2000, 20000)
+	var y_random = randi_range(-2000, 20000)
 	
 	var mejora = preload("res://mejora.tscn").instantiate()
 	mejora.position = Vector2(x_random, y_random)
@@ -92,6 +93,7 @@ func super_poder():
 
 
 func bucle():
-	await get_tree().create_timer(randf_range(10,100)).timeout
+	await get_tree().create_timer(randf_range(10,60)).timeout
 	super_poder()
 	bucle()
+
