@@ -8,10 +8,11 @@ var multi = 1
 var balls = 1
 var money:int = 0
 var run = 1
+var podes_comprar = true
 
-var legendary = 5
-var rare = 15
-var common = 80
+var legendary = -10
+var rare = 10
+var common = 90
 var maxing_supreme = -20
 var bond = 0
 
