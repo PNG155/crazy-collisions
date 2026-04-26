@@ -1,0 +1,23 @@
+extends Sprite2D
+@onready var markers =[
+	$Marker2D,
+	$Marker2D2,
+	$Marker2D3
+]
+
+func _ready():
+	for i in range(3):
+		var r = randi_range(1,4)
+		var instancia
+		
+		if r == 1:
+			instancia = preload("res://ball2x.tscn").instantiate()
+		elif r == 2:
+			instancia = preload("res://level_up.tscn").instantiate()
+		elif r == 3:
+			instancia = preload("res://god.tscn").instantiate()
+		else:
+			instancia = preload("res://down.tscn").instantiate()
+		
+		add_child(instancia)
+		instancia.global_position = markers[i].global_position
