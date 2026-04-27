@@ -1,13 +1,10 @@
 extends Label
 
-var valuer:int = 0
 
 
 func actualizar_precio2():
-	valuer = int(GameManager.money +1)
-	print(valuer)
-	if valuer <= 9: 
-		valuer = 10 
+	if get_parent().precio_final <= 9: 
+		get_parent().precio_final = 10 
 
 func _ready():
 	actualizar_precio2()
@@ -16,4 +13,4 @@ func _process(delta):
 	actualizar_precio2()
 	text = "This effect
 	is random
-	PRICE: " + str(valuer) + "$"
+	PRICE: " + str(get_parent().precio_final) + "$"
