@@ -37,19 +37,14 @@ func _on_mouse_entered() -> void:
 		$Sprite2D2.flip_h = true
 		$Sprite2D2.global_position -= Vector2(500, 0)
 		$Label.global_position -= Vector2(530, 0)
-	elif $Sprite2D2.global_position.x + ancho > screen_size.x:
-		$Sprite2D2.flip_h = false
-		$Sprite2D2.global_position -= Vector2(-500, 0)
-		$Label.global_position -= Vector2(-530, 0)
+
 
 func _on_mouse_exited() -> void:
 	$Sprite2D2.hide()
 	$Label.hide()
 
 func _on_button_down() -> void:
-	print("CLICK")
 	if GameManager.money >= precio_final and GameManager.podes_comprar:
-		print("buy it")
 		print(precio_final)
 		
 		GameManager.multi += 1
