@@ -29,6 +29,14 @@ func _ready():
 func _on_mouse_entered() -> void:
 	$Sprite2D2.show()
 	$Label.show()
+	
+	var screen_size = get_viewport_rect().size
+	var ancho = $Sprite2D2.texture.get_size().x * $Sprite2D2.scale.x
+	
+	if $Sprite2D2.global_position.x + ancho > screen_size.x:
+		$Sprite2D2.flip_h = true
+		$Sprite2D2.global_position -= Vector2(500, 0)
+		$Label.global_position -= Vector2(530, 0)
 
 
 func _on_mouse_exited() -> void:
