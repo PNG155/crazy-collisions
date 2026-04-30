@@ -28,7 +28,9 @@ func _ready():
 
 func _on_mouse_entered() -> void:
 	$Sprite2D2.show()
+	$Sprite2D2.z_index = 1000
 	$Label.show()
+	$Label.z_index = 1000
 	
 	var screen_size = get_viewport_rect().size
 	var ancho = $Sprite2D2.texture.get_size().x * $Sprite2D2.scale.x
