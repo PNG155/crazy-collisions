@@ -30,7 +30,9 @@ func _ready():
 
 func _on_mouse_entered() -> void:
 	$Sprite2D.show()
+	$Sprite2D.z_index = 1000
 	$Label.show()
+	$Label.z_index = 1000
 	
 	var screen_size = get_viewport_rect().size
 	var ancho = $Sprite2D.texture.get_size().x * $Sprite2D.scale.x
@@ -52,11 +54,12 @@ func _on_button_down() -> void:
 		print("buy it")
 		print(precio_final)
 		
-		random2 = randi_range(1,6)
+		random2 = randi_range(1,7)
 		if random2 == 1:
 			GameManager.multi += 1
 			$Label2.z_index = 1000
 			$Label2.show()
+			$Label7.modulate = Color.GREEN_YELLOW
 			$Label2.global_position = Vector2(50, 250)
 		elif random2 == 2:
 			GameManager.multi -= 0.5
@@ -72,6 +75,7 @@ func _on_button_down() -> void:
 			GameManager.money += 10
 			$Label5.z_index = 1000
 			$Label5.show()
+			$Label7.modulate = Color.GREEN_YELLOW
 			$Label5.global_position = Vector2(50, 250)
 		elif random2 == 5:
 			GameManager.money = int(GameManager.money / 2)
@@ -82,7 +86,13 @@ func _on_button_down() -> void:
 			GameManager.extra_time += 5
 			$Label7.z_index = 1000
 			$Label7.show()
+			$Label7.modulate = Color.GREEN_YELLOW
 			$Label7.global_position = Vector2(50, 250)
+		elif random2 == 7:
+			GameManager.multi -= 0.5
+			$Label3.z_index = 1000
+			$Label3.show()
+			$Label3.global_position = Vector2(50, 250)
 		
 		GameManager.bloquear_compra()
 		await get_tree().create_timer(1).timeout
@@ -92,3 +102,4 @@ func _on_button_down() -> void:
 		print(precio_final)
 		return
 #550 250
+
