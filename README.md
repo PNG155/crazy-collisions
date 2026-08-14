@@ -18,11 +18,6 @@ And that's exactly the point.
 
 Adapt. Improvise. Survive the chaos.
 
-<h3>What to expect</h3> - Physics-driven insanity - Roguelike progression with unpredictable builds - Quick rounds, constant tension - Simple to play… hard to master
-
-One run you're a genius.
-The next one? Total disaster.
-
 So… how far can you really go?
 TRY YOUR LUCK. PUSH YOUR SKILL. EMBRACE THE COLLISIONS.
 
