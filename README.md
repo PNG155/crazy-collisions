@@ -7,7 +7,6 @@ Crazy Collisions is a fast-paced roguelike where every click unleashes unpredict
 Your mission sounds simple:
 complete the objective before time runs out.
 
-But here's the catch...
 luck is always part of the equation.
 
 Each round you survive brings you to a shop with 3 random items. Some will turn you into an unstoppable force. Others might ruin everything in seconds.
