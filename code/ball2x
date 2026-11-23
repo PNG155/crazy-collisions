@@ -6,13 +6,13 @@ var precio_base = 0
 
 func actualizar_precio():
 	if GameManager.run < 3:
-		precio_base = 40
+		precio_base = 45
 	elif GameManager.run < 6:
-		precio_base = 80
+		precio_base = 86
 	elif GameManager.run < 13:
-		precio_base = 200
+		precio_base = 220
 	else:
-		precio_base = 300
+		precio_base = 350
 	
 	precio_final = precio_base * randf_range(0.7, 3)
 	
@@ -28,7 +28,9 @@ func _ready():
 
 func _on_mouse_entered() -> void:
 	$Sprite2D2.show()
+	$Sprite2D2.z_index = 1000
 	$Label.show()
+	$Label.z_index = 1000
 	
 	var screen_size = get_viewport_rect().size
 	var ancho = $Sprite2D2.texture.get_size().x * $Sprite2D2.scale.x
@@ -57,4 +59,3 @@ func _on_button_down() -> void:
 		print("poor")
 		print(precio_final)
 		return
-
